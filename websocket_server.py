@@ -4,10 +4,10 @@ from http.client import responses
 import websockets
 from websockets import ServerConnection
 
-async def echo(websocket, ServerConnection):
+async def echo(websocket):
     async for message in websocket:
         print(f'Получено сообщение: {message}')
-        response = f'Сервер получилоЖ: {message}'
+        response = f'Сервер получило: {message}'
         await websocket.send(response)
 
 async def main():
